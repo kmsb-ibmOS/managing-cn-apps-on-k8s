@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: front-service
-        image: [IMAGE-PUSH-LOCATION]
+        image: [FRONT-SERVICE-IMAGE-PUSH-LOCATION]
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
@@ -42,7 +42,7 @@ metadata:
   labels:
     app: backend-service
 spec:
-  replicas: 4
+  replicas: 1
   selector:
     matchLabels:
       app: backend-service
@@ -53,7 +53,7 @@ spec:
     spec:
       containers:
       - name: backend-service
-        image: [IMAGE-PUSH-LOCATION]
+        image: [BACKEND-SERVICE-IMAGE-PUSH-LOCATION]
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
