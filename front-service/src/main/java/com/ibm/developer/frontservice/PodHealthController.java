@@ -33,7 +33,8 @@ public class PodHealthController {
 			@Override
 			public void run() {
 				try {
-					Thread.currentThread().sleep(10000);
+					Thread.currentThread();
+					Thread.sleep(10000);
 					AvailabilityChangeEvent.publish(context, ReadinessState.ACCEPTING_TRAFFIC);
 				} catch (InterruptedException e) {
 					// TODO Auto-generated catch block
